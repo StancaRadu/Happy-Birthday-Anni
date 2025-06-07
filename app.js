@@ -61,5 +61,6 @@ document.addEventListener('mousemove', (e) => {
     leaveTrail(e);
 });
 document.addEventListener('touchmove', (e) => {
-    leaveTrail(e);
+    const t = e.touches[0];
+    leaveTrail(t);
 });
