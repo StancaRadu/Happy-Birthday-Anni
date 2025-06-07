@@ -42,7 +42,7 @@ body{
     
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
-    background-color: hsl(182, 39%, 17%);
+    background-color: #172038;
     
     position: absolute;
     top: 50%;
@@ -66,16 +66,19 @@ body{
     top: 45%;
     left: 50%;
 
-    &#photo-1{
+    &#photo-3{
         background-color:#FFA500;
+        background-image: url(img/group.jpg);
         transform: translate(calc(-55%), calc(-42%)) rotateZ(2deg);
     }
     &#photo-2{
         background-color: hsl(120, 100%, 50%);
+        background-image: url(img/fire\ party.jpg);
         transform: translate(calc(-49%), calc(-45%)) rotateZ(-4deg);
     }
-    &#photo-3{
+    &#photo-1{
         background-color: aqua;
+        background-image: url(img/closeup.jpg);
         transform: translate(calc(-45%), calc(-43%)) rotateZ(-1deg);
     }
 }
@@ -95,4 +98,27 @@ body{
     background-position: bottom center;
 
     z-index: 5;
+}
+#envelope-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/envelope-top.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    background-position: top center;
+
+    z-index: 6;
+
+    animation: disappear2 3s forwards;
+    animation-delay: 2s; /* delay before it starts */
+}
+
+@keyframes disappear2 {
+  to {
+    opacity: 0;
+  }
 }
