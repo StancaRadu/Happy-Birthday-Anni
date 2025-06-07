@@ -21,7 +21,6 @@ document.addEventListener('mousemove', (e) => {
     if (Math.abs(CX - TCX) > 25 || Math.abs(CY - TCY) > 25 ) {
         CX = TCX;
         CY = TCY;
-        console.log(`Cursor Position: X=${CX}, Y=${CY}`);
         const star = document.createElement('div');
         star.classList.add('trail-graphic');
 
@@ -40,11 +39,8 @@ document.addEventListener('mousemove', (e) => {
         // ANIMATION
         star.style.setProperty('--fall-distance', `${randomFallDistance}px`);
         star.style.setProperty('--fall-duration', `${Math.random() * 1.2 + .8}s`); // Random duration between .8s and 2s
-
-
+        star.addEventListener('animationend', () => { star.remove(); }); // Deletes the element from DOM 
+        
         document.body.appendChild(star);
-        star.addEventListener('animationend', () => {
-            star.remove(); // Deletes the element from DOM
-        });
     }
 });

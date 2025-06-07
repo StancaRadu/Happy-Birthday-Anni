@@ -1,8 +1,7 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
-body, html{
-    width: 100%;
-    height: 100%;
-}
+
+body, html{width: 100%; height: 100%;}
+
 body{
     background-color: hsl(215, 16%, 53%);
     overflow: hidden;
@@ -12,15 +11,16 @@ body{
 
 
 .trail-graphic{
-    position: absolute;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: hsl(0, 0%, 100%);
-    pointer-events: none;
+    
+    position: absolute;
     z-index: 1000;
-
+    
     animation: disappear var(--fall-duration) forwards;
+    pointer-events: none;
 }
  
 @keyframes disappear {
@@ -33,24 +33,63 @@ body{
 /* -------------------------------- envelope -------------------------------- */
 
 #envelope{
-    position: fixed;
     display: flex;
     min-width: 300px;
     max-width: 50%;
     min-height: 200px;
     max-height: 60%;
     aspect-ratio: 1.5;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 10px;
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background-color: hsl(182, 39%, 17%);
+    
+    position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+
+    overflow: hidden;
 }
 
-/* --------------------------------- helpers -------------------------------- */
+.photo{
+    width: 87%;
+    height: 87%;
+
+    border-radius: inherit;
+    background-color: hsl(0, 0%, 100%);
+
+    position: absolute;
+    top: 45%;
+    left: 50%;
+
+    &#photo-1{
+        background-color: hsl(0, 100%, 50%);
+        transform: translate(calc(-55%), calc(-42%)) rotateZ(2deg);
+    }
+    &#photo-2{
+        background-color: hsl(120, 100%, 50%);
+        transform: translate(calc(-49%), calc(-45%)) rotateZ(-4deg);
+    }
+    &#photo-3{
+        background-color: aqua;
+        transform: translate(calc(-45%), calc(-43%)) rotateZ(-1deg);
+    }
+}
 
 .stretcher{
+    min-width: 100%;
     width: 100vw;
+    max-width: 100%;
+    min-height: 100%;
     height: 100vh;
+    max-height: 100%;
+
+    background-image: url(img/envelope.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    background-position: bottom center;
+
+    z-index: 5;
 }
