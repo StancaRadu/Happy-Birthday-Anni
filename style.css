@@ -58,13 +58,16 @@ body{
 
     border-radius: inherit;
     background-color: hsl(0, 0%, 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 
     position: absolute;
     top: 45%;
     left: 50%;
 
     &#photo-1{
-        background-color: hsl(0, 100%, 50%);
+        background-color:#FFA500;
         transform: translate(calc(-55%), calc(-42%)) rotateZ(2deg);
     }
     &#photo-2{

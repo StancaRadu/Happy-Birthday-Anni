@@ -14,7 +14,19 @@ const trail = {
     ],
 }
 
-document.addEventListener('mousemove', (e) => {
+const envelope = {
+    bgColors: [
+        '#FF6F61', // coral red
+        '#FFA500', // bright orange
+        '#32CD99', // medium turquoise
+        '#3B82F6', // vivid blue
+        '#A23E48', // deep raspberry
+        '#F2C94C', // sunflower yellow
+    ]
+}
+
+
+function leaveTrail(e) {
     let TCX = e.clientX;
     let TCY = e.clientY;
 
@@ -43,4 +55,11 @@ document.addEventListener('mousemove', (e) => {
         
         document.body.appendChild(star);
     }
+}
+
+document.addEventListener('mousemove', (e) => {
+    leaveTrail(e);
+});
+document.addEventListener('touchmove', (e) => {
+    leaveTrail(e);
 });
