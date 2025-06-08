@@ -96,20 +96,20 @@ function createAddPhotos(){
     }
 }
 createAddPhotos();
-
-
-window.addEventListener('load', () => {
-    console.log('All images and resources are loaded');
-    document.getElementById('loading').remove();
-
-
-    document.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
         leaveTrail(e);
     });
     document.addEventListener('touchmove', (e) => {
         e.preventDefault();
         leaveTrail(e.touches[0]);
     }, { passive: false });
+
+window.addEventListener('load', () => {
+    console.log('All images and resources are loaded');
+    document.getElementById('loading').remove();
+
+
+    
 
     document.getElementById('envelope').addEventListener('click', () => {
         if (!envelope.top.classList.contains('opened')) {
