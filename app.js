@@ -1,7 +1,3 @@
-window.addEventListener('load', () => {
-  console.log('All images and resources are loaded');
-  /* ------------------------------ cursor trail ------------------------------ */
-
 let CX = 0;
 let CY = 0;
 
@@ -100,6 +96,12 @@ function createAddPhotos(){
     }
 }
 createAddPhotos();
+
+
+window.addEventListener('load', () => {
+  console.log('All images and resources are loaded');
+  /* ------------------------------ cursor trail ------------------------------ */
+
 
 document.addEventListener('mousemove', (e) => {
     leaveTrail(e);
