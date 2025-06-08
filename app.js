@@ -107,8 +107,7 @@ document.addEventListener('mousemove', (e) => {
 
 window.addEventListener('load', () => {
     console.log('All images and resources are loaded');
-    document.getElementById('loading').innerHTML = 'CLICK ME';
-
+    document.getElementById('loading').innerHTML = 'OPEN MAIL';
 
     
 
