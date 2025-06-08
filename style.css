@@ -161,7 +161,6 @@ body{
 	align-items: center;
 	background-color: #2c2f69;
     overflow: hidden;
-    z-index: 1000;
 }
 .firework {
 	position: absolute;
