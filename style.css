@@ -74,7 +74,7 @@ body{
     max-height: 100%;
 
     border-radius: inherit;
-    background-image: url(img/envelope\ bottom.png);
+    /* background-image: url(img/envelope\ bottom.png); */
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
@@ -83,6 +83,13 @@ body{
     font-size: xx-large;
 
     z-index: 5;
+
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 #envelope-top{
     position: absolute;
@@ -90,7 +97,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(img/envelope\ top.png);
+    /* background-image: url(img/envelope\ top.png); */
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
@@ -98,6 +105,13 @@ body{
     transform-origin: top;
 
     z-index: 4;
+
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .opened{
