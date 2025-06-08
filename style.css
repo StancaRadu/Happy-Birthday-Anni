@@ -74,7 +74,7 @@ body{
     max-height: 100%;
 
     border-radius: inherit;
-    /* background-image: url(img/envelope\ bottom.png); */
+    background-image: url(img/envelope\ bottom.png);
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
@@ -83,14 +83,15 @@ body{
     font-size: xx-large;
 
     z-index: 5;
+    overflow: hidden;
 
     img{
         position: absolute;
         width: 100%;
         height: 100%;
-        object-fit: contain;
     }
 }
+
 #envelope-top{
     position: absolute;
     top: 0;
@@ -180,14 +181,13 @@ body{
 }
 @keyframes photo-appear {
     50%{
-        transform: translate(-50%, -180%) rotateZ(-20deg);
+        transform: translate(-50%, -180%) rotateZ(-20deg) translateZ(0);
     }
     60%{
         box-shadow: 10px 10px 10px 4px rgba(9, 28, 45, 0.7);
     }
     100%{
         box-shadow: 10px 10px 10px 4px rgba(9, 28, 45, 0.7);
-        z-index: 10;
         transform: translate(var(--x), -35%) rotateZ(var(--z));
         z-index: var(--order-z);
     }
@@ -363,7 +363,6 @@ body{
     }
     100%{
         box-shadow: 4px 4px 4px 2px rgba(9, 28, 45, 0.7);
-        z-index: 10;
         transform: translate(var(--x), -35%) rotateZ(var(--z));
         z-index: var(--order-z);
     }
