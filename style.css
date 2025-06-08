@@ -247,6 +247,8 @@ body{
 }
 #firework2 .explosion::before {
 	animation: explosion 2s .6s ease-in-out infinite;
+	background-color: #9e52f5;
+
 }
 
 #firework3 {
@@ -256,6 +258,8 @@ body{
 }
 #firework3 .explosion::before {
 	animation: explosion 2s .4s ease-in-out infinite;
+	background-color: #58e8dc;
+
 }
 
 @media (max-width: 768px) {
