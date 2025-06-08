@@ -1,0 +1,17 @@
+const photoList = [
+  './img/photos/20250425_190819.jpg',
+  './img/photos/20250426_224418.jpg',
+  './img/photos/20250426_234913.jpg',
+  './img/photos/20250427_143740.jpg',
+  './img/photos/20250427_143742.jpg',
+  './img/photos/20250427_143747.jpg',
+  './img/photos/20250427_143749.jpg',
+  './img/photos/beer.jpg',
+  './img/photos/closeup.jpg',
+  './img/photos/dj.jpg',
+  './img/photos/fire party.jpg',
+  './img/photos/group.jpg',
+  './img/photos/mixed.jpg',
+  './img/photos/star.jpg',
+  './img/photos/sushi.jpg',
+];

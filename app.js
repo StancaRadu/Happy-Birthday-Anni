@@ -23,8 +23,7 @@ const envelope = {
         '#6D8B74', '#AD9BAA', '#B29B7F', '#7E90A3',
         '#A48E7F', '#698996', '#A8808A', '#8DA48F'
     ],
-    photos: [
-        'closeup.jpg', 'group.jpg', 'fire party.jpg', 'sushi.jpg', 'beer.jpg', 'dj.jpg', 'mixed.jpg',],
+    photos: photoList, // Assuming photoList is defined elsewhere
     html: document.getElementById('envelope'),
     top: document.getElementById('envelope-top'),
 }
@@ -78,7 +77,7 @@ function createAddPhotos(){
 
         photo.style.backgroundColor = envelope.bgColors[Math.floor(Math.random() * envelope.bgColors.length)];
         photo.style.transform = `translate(${Math.floor(Math.random() * 10 - 55)}%, ${Math.floor(Math.random() * 10 - 47)}%) rotateZ(${Math.floor(Math.random() * 10 - 5)}deg)`
-        photo.style.backgroundImage = `url('./img/${envelope.photos[photoOrder[index]]}')`;
+        photo.style.backgroundImage = `url('${envelope.photos[photoOrder[index]]}')`;
         
         envelope.html.appendChild(photo);
         photos.push(photo);
