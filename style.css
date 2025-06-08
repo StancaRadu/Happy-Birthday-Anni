@@ -26,7 +26,7 @@ body{
 @keyframes disappear {
   to {
     opacity: 0;
-    transform:  translateY(var(--fall-distance)) scale(2);
+    transform:  translateY(var(--fall-distance)) scale(var(--fall-scale));
   }
 }
 
@@ -48,10 +48,52 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    overflow: hidden;
 }
 
+
+
+.stretcher{
+    min-width: 100%;
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    max-height: 100%;
+
+    border-radius: inherit;
+    background-image: url(img/envelope.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    background-position: bottom center;
+
+    z-index: 5;
+}
+#envelope-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/envelope-top.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    background-position: top center;
+
+    z-index: 6;
+
+    animation: disappear2 3s forwards;
+    /* animation-delay: 2s; delay before it starts */
+}
+
+@keyframes disappear2 {
+  to {
+    opacity: 0;
+  }
+}
+
+/* --------------------------------- photos --------------------------------- */
 .photo{
     width: 87%;
     height: 87%;
@@ -83,42 +125,19 @@ body{
     }
 }
 
-.stretcher{
-    min-width: 100%;
-    width: 100vw;
-    max-width: 100%;
-    min-height: 100%;
-    height: 100vh;
-    max-height: 100%;
-
-    background-image: url(img/envelope.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    image-rendering: pixelated;
-    background-position: bottom center;
-
-    z-index: 5;
+.photo-animation{
+    animation: photo-appear 2s forwards;
 }
-#envelope-top{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(img/envelope-top.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    image-rendering: pixelated;
-    background-position: top center;
+@keyframes photo-appear {
+    50%{
+        transform: translate(-50%, -170%) rotateZ(0deg);
+    }
+    100%{
+        z-index: 10;
+    }
+    100%{
+        transform: translate(-50%, -50%) rotateZ(0deg);
+        z-index: 10;
 
-    z-index: 6;
-
-    animation: disappear2 3s forwards;
-    animation-delay: 2s; /* delay before it starts */
-}
-
-@keyframes disappear2 {
-  to {
-    opacity: 0;
-  }
+    }
 }

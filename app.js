@@ -22,7 +22,8 @@ const envelope = {
         '#3B82F6', // vivid blue
         '#A23E48', // deep raspberry
         '#F2C94C', // sunflower yellow
-    ]
+    ],
+    html: document.getElementById('envelope'),
 }
 
 
@@ -51,6 +52,7 @@ function leaveTrail(e) {
         // ANIMATION
         star.style.setProperty('--fall-distance', `${randomFallDistance}px`);
         star.style.setProperty('--fall-duration', `${Math.random() * 1.2 + .8}s`); // Random duration between .8s and 2s
+        star.style.setProperty('--fall-scale', `${Math.random() * 0.5 + 1.5}`); // Random scale between 0.5 and 2
         star.addEventListener('animationend', () => { star.remove(); }); // Deletes the element from DOM 
         
         document.body.appendChild(star);
@@ -63,4 +65,8 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('touchmove', (e) => {
     const t = e.touches[0];
     leaveTrail(t);
+});
+
+document.getElementById('envelope').addEventListener('click', () => {
+    document.getElementById('photo-1').classList.add('photo-animation');
 });
