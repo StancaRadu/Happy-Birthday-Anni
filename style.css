@@ -7,6 +7,13 @@ body{
     overflow: hidden;
 }
 
+:root{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #dce3eb;
+}
+
 /* ------------------------------ cursor trail ------------------------------ */
 
 
@@ -53,6 +60,11 @@ body{
 
 
 .stretcher{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+
     min-width: 100%;
     width: 100vw;
     max-width: 100%;
@@ -66,6 +78,8 @@ body{
     background-size: contain;
     image-rendering: pixelated;
     background-position: bottom center;
+
+    font-size: 3rem;
 
     z-index: 5;
 }
@@ -104,7 +118,7 @@ body{
     width: 80%;
     height: 80%;
 
-    border-radius: inherit;
+    border-radius: 12px;
     border: rgb(83, 67, 106) dashed 4px;
     background-color: hsl(0, 0%, 100%);
     background-position: center;
