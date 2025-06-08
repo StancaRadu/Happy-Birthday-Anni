@@ -24,7 +24,7 @@ const envelope = {
         '#A48E7F', '#698996', '#A8808A', '#8DA48F'
     ],
     photos: [
-        'closeup.jpg', 'group.jpg', 'fire party.jpg', 'sushi.jpg', 'beer.jpg',],
+        'closeup.jpg', 'group.jpg', 'fire party.jpg', 'sushi.jpg', 'beer.jpg', 'dj.jpg',],
     html: document.getElementById('envelope'),
 }
 
