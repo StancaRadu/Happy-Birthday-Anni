@@ -41,7 +41,7 @@ body{
     aspect-ratio: 1.5;
     
     box-shadow: 15px 15px 20px 8px rgb(21, 19, 26);
-    border-radius: 12px;
+    border-radius: 0 0 12px 12px;
     background-color: #172038;
     
     position: absolute;
@@ -80,17 +80,23 @@ body{
     background-size: contain;
     image-rendering: pixelated;
     background-position: top center;
+    transform-origin: top;
 
     z-index: 6;
+}
 
-    animation: disappear2 3s forwards;
-    /* animation-delay: 2s; delay before it starts */
+.opened{
+    animation: disappear2 1s forwards;
 }
 
 @keyframes disappear2 {
-  to {
-    opacity: 0;
+  80%{
+    transform:rotateX(180deg);
   }
+  100%{
+    transform:rotateX(180deg);
+    z-index: 0;
+}
 }
 
 /* --------------------------------- photos --------------------------------- */

@@ -24,8 +24,9 @@ const envelope = {
         '#A48E7F', '#698996', '#A8808A', '#8DA48F'
     ],
     photos: [
-        'closeup.jpg', 'group.jpg', 'fire party.jpg', 'sushi.jpg', 'beer.jpg', 'dj.jpg',],
+        'closeup.jpg', 'group.jpg', 'fire party.jpg', 'sushi.jpg', 'beer.jpg', 'dj.jpg', 'mixed.jpg',],
     html: document.getElementById('envelope'),
+    top: document.getElementById('envelope-top'),
 }
 
 function randomArray(max) {
@@ -94,6 +95,10 @@ document.addEventListener('touchmove', (e) => {
 });
 
 document.getElementById('envelope').addEventListener('click', () => {
+    if (!envelope.top.classList.contains('opened')) {
+        envelope.top.classList.add('opened');
+        return
+    }
     if (photoIndex < 0)  return
 
     photos[photoIndex].classList.add('photo-animation');
