@@ -117,9 +117,15 @@ window.addEventListener('load', () => {
             document.getElementById('loading').remove();
             return
         }
-        if (photoIndex == - 1) {
+        if (photoIndex == - 2) {
             document.getElementById('message').classList.add('photo-animation');
-            document.getElementById('message').style.setProperty('--order-z', photoZIndex + 7);
+            document.getElementById('message').style.setProperty('--order-z', photoZIndex + 8);
+        }
+        if (photoIndex == - 1) {
+            document.getElementById('message-flok').classList.add('photo-animation');
+            document.getElementById('message-flok').style.setProperty('--order-z', photoZIndex + 7);
+            photoIndex--;
+            photoZIndex++;
         }
         if (photoIndex < 0)  return
 

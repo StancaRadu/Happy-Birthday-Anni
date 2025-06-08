@@ -194,7 +194,14 @@ body{
 }
 
 /* --------------------------------- message -------------------------------- */
-
+#message-flok {
+	background-color: #23a20b;
+    background-position: bottom center;
+    background-image: url(img/New\ Piskel.png);
+    image-rendering: pixelated;
+    overflow: hidden;
+    transform: translate(-50%, -50%);   
+}
 #message {
     padding: 4px;
     font-size: xx-large;
