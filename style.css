@@ -122,8 +122,8 @@ body{
         z-index: 10;
     }
     100%{
-        transform: translate(-50%, -50%) rotateZ(0deg);
-        z-index: 10;
+        transform: translate(-50%, -35%) rotateZ(0deg);
+        z-index: var(--order-z);
 
     }
 }

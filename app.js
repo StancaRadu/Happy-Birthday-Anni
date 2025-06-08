@@ -24,7 +24,7 @@ const envelope = {
         '#A48E7F', '#698996', '#A8808A', '#8DA48F'
     ],
     photos: [
-        'closeup.jpg', 'group.jpg', 'fire party.jpg'],
+        'closeup.jpg', 'group.jpg', 'fire party.jpg', 'sushi.jpg', 'beer.jpg',],
     html: document.getElementById('envelope'),
 }
 
@@ -34,7 +34,8 @@ function randomArray(max) {
 }
 const photoOrder = randomArray(envelope.photos.length - 1);
 let photos = [];
-let photoIndex = 0;
+let photoIndex = envelope.photos.length - 1; // Start with the last photo
+let photoZIndex = 0; // Index for the random order of photos
 
 function leaveTrail(e) {
     let TCX = e.clientX;
@@ -93,11 +94,12 @@ document.addEventListener('touchmove', (e) => {
 });
 
 document.getElementById('envelope').addEventListener('click', () => {
+    if (photoIndex < 0)  return
+
     photos[photoIndex].classList.add('photo-animation');
-    photoIndex++;
-    if (photoIndex >= photos.length) {
-        photoIndex = 0;
-    }
+    photos[photoIndex].style.setProperty('--order-z', photoZIndex + 6);
+    photoIndex--;
+    photoZIndex++;
 });
 
 
