@@ -24,6 +24,7 @@ const envelope = {
     photos: photoList, // Assuming photoList is defined elsewhere
     html: document.getElementById('envelope'),
     top: document.getElementById('envelope-top'),
+    hearts: ['img/heart blue.png', 'img/heart red.png', 'img/heart pink.png']
 }
 
 function randomArray(max) {
@@ -128,5 +129,25 @@ window.addEventListener('load', () => {
         photoIndex--;
         photoZIndex++;
     });
+
+    setInterval(() => {
+        const heart = document.createElement('div');
+
+        const randomX = Math.floor(Math.random() * 100); // Random X position between -50 and 50
+        const randomY = Math.floor(Math.random() * 50 + 20); // Random Y position between -50 and 50
+
+        heart.style.setProperty('--x', `${randomX}%`);
+        heart.style.setProperty('--y', `${randomY}%`);
+        heart.style.left = `${randomX}%`;
+        heart.style.top = `${randomY}%`;
+
+        heart.style.backgroundImage = `url('${envelope.hearts[Math.floor(Math.random() * envelope.hearts.length)]}')`;
+
+
+
+        heart.classList.add('heart');
+        document.getElementById('message').appendChild(heart);
+        heart.addEventListener('animationend', () => { heart.remove(); }); // Deletes the element from DOM 
+    },  200);
 });
 
