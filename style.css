@@ -39,18 +39,7 @@ body{
 
 /* -------------------------------- envelope -------------------------------- */
 
-@media screen and (max-width: 600px) {
-    #envelope{
-        min-width: 250px;
-        max-width: 80%;
-        min-height: 150px;
-        max-height: 50%;
-    }
-    .stretcher{
-        font-size: 2rem;
-    }
-    
-}
+
 
 #envelope{
     display: flex;
@@ -172,6 +161,7 @@ body{
 	align-items: center;
 	background-color: #2c2f69;
     overflow: hidden;
+    z-index: 1000;
 }
 .firework {
 	position: absolute;
@@ -267,4 +257,20 @@ body{
 }
 #firework3 .explosion::before {
 	animation: explosion 2s .4s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    #envelope{
+        min-width: 250px;
+        max-width: 80%;
+        min-height: 150px;
+        max-height: 50%;
+    }
+    .stretcher{
+        font-size: 2rem;
+    }
+    #message{
+        font-size: small;
+    }
+    
 }

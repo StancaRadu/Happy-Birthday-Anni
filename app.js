@@ -89,8 +89,9 @@ document.addEventListener('mousemove', (e) => {
     leaveTrail(e);
 });
 document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
     leaveTrail(e.touches[0]);
-});
+}, { passive: false });
 
 document.getElementById('envelope').addEventListener('click', () => {
     if (!envelope.top.classList.contains('opened')) {
