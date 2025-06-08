@@ -16,16 +16,25 @@ const trail = {
 
 const envelope = {
     bgColors: [
-        '#FF6F61', // coral red
-        '#FFA500', // bright orange
-        '#32CD99', // medium turquoise
-        '#3B82F6', // vivid blue
-        '#A23E48', // deep raspberry
-        '#F2C94C', // sunflower yellow
+        '#B2675E', '#A68BAF', '#5E8C6A', '#7A9E9F',
+        '#D4A373', '#6C91BF', '#B07A7C', '#A0A583',
+        '#C79293', '#6A9A8B', '#A798C9', '#C4A287',
+        '#7A7A96', '#BDAD9E', '#8796A1', '#A97D7C',
+        '#6D8B74', '#AD9BAA', '#B29B7F', '#7E90A3',
+        '#A48E7F', '#698996', '#A8808A', '#8DA48F'
     ],
+    photos: [
+        'closeup.jpg', 'group.jpg', 'fire party.jpg'],
     html: document.getElementById('envelope'),
 }
 
+function randomArray(max) {
+  return [...Array(max + 1).keys()]
+    .sort(() => Math.random() - 0.5);
+}
+const photoOrder = randomArray(envelope.photos.length - 1);
+let photos = [];
+let photoIndex = 0;
 
 function leaveTrail(e) {
     let TCX = e.clientX;
@@ -59,6 +68,22 @@ function leaveTrail(e) {
     }
 }
 
+
+function createAddPhotos(){
+    for (let index = 0; index < envelope.photos.length; index++) {
+        const photo = document.createElement('div');
+        photo.classList.add('photo');
+
+        photo.style.backgroundColor = envelope.bgColors[Math.floor(Math.random() * envelope.bgColors.length)];
+        photo.style.transform = `translate(${Math.floor(Math.random() * 10 - 55)}%, ${Math.floor(Math.random() * 10 - 47)}%) rotateZ(${Math.floor(Math.random() * 10 - 5)}deg)`
+        photo.style.backgroundImage = `url('./img/${envelope.photos[photoOrder[index]]}')`;
+        
+        envelope.html.appendChild(photo);
+        photos.push(photo);
+    }
+}
+createAddPhotos();
+
 document.addEventListener('mousemove', (e) => {
     leaveTrail(e);
 });
@@ -68,5 +93,12 @@ document.addEventListener('touchmove', (e) => {
 });
 
 document.getElementById('envelope').addEventListener('click', () => {
-    document.getElementById('photo-1').classList.add('photo-animation');
+    photos[photoIndex].classList.add('photo-animation');
+    photoIndex++;
+    if (photoIndex >= photos.length) {
+        photoIndex = 0;
+    }
 });
+
+
+
