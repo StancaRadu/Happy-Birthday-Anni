@@ -1,4 +1,6 @@
-/* ------------------------------ cursor trail ------------------------------ */
+window.addEventListener('load', () => {
+  console.log('All images and resources are loaded');
+  /* ------------------------------ cursor trail ------------------------------ */
 
 let CX = 0;
 let CY = 0;
@@ -85,7 +87,13 @@ function createAddPhotos(){
 
         photo.style.backgroundColor = envelope.bgColors[Math.floor(Math.random() * envelope.bgColors.length)];
         photo.style.transform = `translate(var(--x), var(--y)) rotateZ(var(--z))`
-        photo.style.backgroundImage = `url('${envelope.photos[photoOrder[index]]}')`;
+
+        const img = document.createElement('img');
+        img.src = envelope.photos[photoOrder[index]];
+
+        photo.appendChild(img);
+
+        // photo.style.backgroundImage = `url('${envelope.photos[photoOrder[index]]}')`;
         
         envelope.html.appendChild(photo);
         photos.push(photo);
@@ -117,3 +125,5 @@ document.getElementById('envelope').addEventListener('click', () => {
     photoIndex--;
     photoZIndex++;
 });
+});
+
