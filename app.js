@@ -99,33 +99,33 @@ createAddPhotos();
 
 
 window.addEventListener('load', () => {
-  console.log('All images and resources are loaded');
-  /* ------------------------------ cursor trail ------------------------------ */
+    console.log('All images and resources are loaded');
+    document.getElementById('loading').remove();
 
 
-document.addEventListener('mousemove', (e) => {
-    leaveTrail(e);
-});
-document.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    leaveTrail(e.touches[0]);
-}, { passive: false });
+    document.addEventListener('mousemove', (e) => {
+        leaveTrail(e);
+    });
+    document.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        leaveTrail(e.touches[0]);
+    }, { passive: false });
 
-document.getElementById('envelope').addEventListener('click', () => {
-    if (!envelope.top.classList.contains('opened')) {
-        envelope.top.classList.add('opened');
-        return
-    }
-    if (photoIndex == - 1) {
-        document.getElementById('message').classList.add('photo-animation');
-        document.getElementById('message').style.setProperty('--order-z', photoZIndex + 7);
-    }
-    if (photoIndex < 0)  return
+    document.getElementById('envelope').addEventListener('click', () => {
+        if (!envelope.top.classList.contains('opened')) {
+            envelope.top.classList.add('opened');
+            return
+        }
+        if (photoIndex == - 1) {
+            document.getElementById('message').classList.add('photo-animation');
+            document.getElementById('message').style.setProperty('--order-z', photoZIndex + 7);
+        }
+        if (photoIndex < 0)  return
 
-    photos[photoIndex].classList.add('photo-animation');
-    photos[photoIndex].style.setProperty('--order-z', photoZIndex + 6);
-    photoIndex--;
-    photoZIndex++;
-});
+        photos[photoIndex].classList.add('photo-animation');
+        photos[photoIndex].style.setProperty('--order-z', photoZIndex + 6);
+        photoIndex--;
+        photoZIndex++;
+    });
 });
 
