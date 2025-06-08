@@ -106,7 +106,7 @@ document.addEventListener('mousemove', (e) => {
 
 window.addEventListener('load', () => {
     console.log('All images and resources are loaded');
-    document.getElementById('loading').remove();
+    document.getElementById('loading').innerHTML = 'CLICK ME';
 
 
     
@@ -114,6 +114,7 @@ window.addEventListener('load', () => {
     document.getElementById('envelope').addEventListener('click', () => {
         if (!envelope.top.classList.contains('opened')) {
             envelope.top.classList.add('opened');
+            document.getElementById('loading').remove();
             return
         }
         if (photoIndex == - 1) {
