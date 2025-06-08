@@ -192,7 +192,6 @@ body{
     background-image: url(img/card.png);
     image-rendering: pixelated;
     overflow: hidden;
-    z-index: 1000;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #f5cf52;
