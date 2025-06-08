@@ -75,8 +75,16 @@ function createAddPhotos(){
         const photo = document.createElement('div');
         photo.classList.add('photo');
 
+        const randomX = Math.floor(Math.random() * 10 - 55);
+        const randomY = Math.floor(Math.random() * 10 - 47);
+        const randomZ = Math.floor(Math.random() * 10 - 5);
+
+        photo.style.setProperty('--x', `${randomX}%`);
+        photo.style.setProperty('--y', `${randomY}%`);
+        photo.style.setProperty('--z', `${randomZ}deg`);
+
         photo.style.backgroundColor = envelope.bgColors[Math.floor(Math.random() * envelope.bgColors.length)];
-        photo.style.transform = `translate(${Math.floor(Math.random() * 10 - 55)}%, ${Math.floor(Math.random() * 10 - 47)}%) rotateZ(${Math.floor(Math.random() * 10 - 5)}deg)`
+        photo.style.transform = `translate(var(--x), var(--y)) rotateZ(var(--z))`
         photo.style.backgroundImage = `url('${envelope.photos[photoOrder[index]]}')`;
         
         envelope.html.appendChild(photo);

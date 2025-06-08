@@ -3,7 +3,7 @@
 body, html{width: 100%; height: 100%;}
 
 body{
-    background-color: hsl(215, 16%, 53%);
+    background-color: hsl(219, 29%, 60%);
     overflow: hidden;
 }
 
@@ -49,9 +49,9 @@ body{
     max-height: 60%;
     aspect-ratio: 1.5;
     
-    box-shadow: 15px 15px 20px 8px rgb(21, 19, 26);
+    box-shadow: 15px 15px 20px 8px rgb(92, 69, 59);
     border-radius: 0 0 12px 12px;
-    background-color: #172038;
+    background-color: #c09473;
     
     position: absolute;
     top: 50%;
@@ -74,7 +74,7 @@ body{
     max-height: 100%;
 
     border-radius: inherit;
-    background-image: url(img/envelope.png);
+    background-image: url(img/envelope\ bottom.png);
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
@@ -90,14 +90,14 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(img/envelope-top.png);
+    background-image: url(img/envelope\ top.png);
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
     background-position: top center;
     transform-origin: top;
 
-    z-index: 6;
+    z-index: 4;
 }
 
 .opened{
@@ -132,6 +132,10 @@ body{
     left: 50%;
 
     transform: translate(-47%, -45%) rotateZ(3deg);
+
+    --x: -50%;
+    --y: -45%;
+    --z: 0deg;  
 }
 
 .photo-animation{
@@ -147,7 +151,7 @@ body{
     100%{
         box-shadow: 10px 10px 10px 4px rgba(9, 28, 45, 0.7);
         z-index: 10;
-        transform: translate(-50%, -35%) rotateZ(0deg);
+        transform: translate(var(--x), -35%) rotateZ(var(--z));
         z-index: var(--order-z);
     }
 }
