@@ -89,14 +89,17 @@ document.addEventListener('mousemove', (e) => {
     leaveTrail(e);
 });
 document.addEventListener('touchmove', (e) => {
-    const t = e.touches[0];
-    leaveTrail(t);
+    leaveTrail(e.touches[0]);
 });
 
 document.getElementById('envelope').addEventListener('click', () => {
     if (!envelope.top.classList.contains('opened')) {
         envelope.top.classList.add('opened');
         return
+    }
+    if (photoIndex == - 1) {
+        document.getElementById('message').classList.add('photo-animation');
+        document.getElementById('message').style.setProperty('--order-z', photoZIndex + 7);
     }
     if (photoIndex < 0)  return
 
@@ -105,6 +108,3 @@ document.getElementById('envelope').addEventListener('click', () => {
     photoIndex--;
     photoZIndex++;
 });
-
-
-
